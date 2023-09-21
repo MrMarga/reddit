@@ -4,7 +4,6 @@ pipeline {
         stage('Code') {
             steps {
                 echo'getting code from github'
-                )
             }
         }
   
