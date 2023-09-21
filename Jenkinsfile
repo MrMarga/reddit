@@ -5,7 +5,7 @@ pipeline {
             steps {
                 git(
                     url: "git@github.com:MrMarga/reddit.git",
-                    branch: "*/origin/main",
+                    branch: "main",
                     changelog: true,
                     poll: true
                 )
