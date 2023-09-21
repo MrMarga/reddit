@@ -4,7 +4,7 @@ pipeline {
         stage('Code') {
             steps {
                 echo 'Writing Code'
-                git url:"https://github.com/MrMarga/reddit.git", branch: "main"
+                git url:"git@github.com:MrMarga/reddit.git", branch: "main"
             }
         }
   
