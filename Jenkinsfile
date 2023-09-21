@@ -3,8 +3,12 @@ pipeline {
     stages {
         stage('Code') {
             steps {
-                echo 'Writing Code'
-                git url:"git@github.com:MrMarga/reddit.git", branch: "main"
+                git(
+                    url: "git@github.com:MrMarga/reddit.git",
+                    branch: "main",
+                    changelog: true,
+                    poll: true
+                )
             }
         }
   
