@@ -4,6 +4,7 @@ pipeline {
         stage('Code') {
             steps {
                 echo'getting code from github'
+                git url :"https://github.com/MrMarga/reddit.git",branch: "main"
             }
         }
   
