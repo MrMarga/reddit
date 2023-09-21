@@ -4,6 +4,7 @@ pipeline {
         stage('Code') {
             steps {
                 echo 'Writing Code'
+                git url:"https://github.com/MrMarga/reddit.git", brach: "main"
             }
         }
   
@@ -11,6 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the image'
+                sh "docker build -t mrmarga/reddit . "
             }
         }
    
