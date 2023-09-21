@@ -3,12 +3,7 @@ pipeline {
     stages {
         stage('Code') {
             steps {
-                git(
-                    url: "git@github.com:MrMarga/reddit.git",
-                    branch: "main",
-                    changelog: true,
-                    poll: true
-                )
+                echo 'fech code'
             }
         }
   
