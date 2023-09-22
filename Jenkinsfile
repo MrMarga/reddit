@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building the image"
-                sh "docker build -t mrmarga/reddit . "
+                sh "docker build -t reddit . "
             }
         }
    
@@ -22,8 +22,9 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 echo "Pushing the image to docker hub"
-                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                    sh 'docker push mrmarga/reddit'
+                    sh "docker tag reddit $DOCKERHUB_CREDENTIALS_USR/reddit:latest"
+                    sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+                    sh "docker push mrmarga/reddit"
                      }
             }
 
