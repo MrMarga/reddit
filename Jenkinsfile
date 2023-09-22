@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the image'
-                sh "sudo docker build -t mrmarga/reddit . "
+                sh "docker build -t mrmarga/reddit . "
             }
         }
    
