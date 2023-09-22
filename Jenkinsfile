@@ -26,12 +26,7 @@ pipeline {
                     sh 'docker push mrmarga/reddit'
                      }
             }
-
-    post {
-             always {
-                    sh 'docker logout'
-                    }
-        }
+            
         stage('Deploy') {
             steps {
                 echo "Deploying the container"
