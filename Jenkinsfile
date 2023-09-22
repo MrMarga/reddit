@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deploying the container"
-                sh "docker run -dit -p8000:8000 --name=reddit-con mrmarga/reddit " 
+                sh "docker run -d -p8000:8000 mrmarga/reddit:latest " 
             }
         }
     }
