@@ -1,5 +1,7 @@
 pipeline {
     agent any
+    environment{DOCKERHUB_CREDENTIALS = credentials('dockerhublogin')}
+
     stages {
         stage('Code') {
             steps {
@@ -16,10 +18,7 @@ pipeline {
             }
         }
    
-         environment {
-                DOCKERHUB_CREDENTIALS = credentials('dockerhublogin')
-            }
-
+        
         stage('Push to DOcker Hub') {
             steps {
                 echo "Pushing the image to docker hub"
