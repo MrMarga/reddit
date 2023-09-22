@@ -24,7 +24,7 @@ pipeline {
                 echo "Pushing the image to docker hub"
                     sh "docker tag reddit $DOCKERHUB_CREDENTIALS_USR/reddit:latest"
                     sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
-                    sh "docker push $$DOCKERHUB_CREDENTIALS_USR/reddit:latest"
+                    sh "docker push $DOCKERHUB_CREDENTIALS_USR/reddit:latest"
                      }
             }
 
