@@ -4,7 +4,7 @@ WORKDIR /reddit-clone
 
 COPY . /reddit-clone
 
-RUN  npm install -g npm@10.1.0
+RUN  npm install 
 
 EXPOSE 3000
 
